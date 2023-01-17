@@ -4,9 +4,9 @@ from functools import lru_cache
 
 class Settings(BaseSettings):
     API_KEY: str
-
+    LIVY_SERVER: str
     class Config:
-        env_file = "app/.env.sample"
+        env_file = "app/.env"
 
 # New decorator for cache
 @lru_cache()

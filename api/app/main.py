@@ -16,9 +16,10 @@ from fastapi import status, HTTPException
 from fastapi.security import OAuth2PasswordBearer, api_key
 
 import app.auth as auth
+from app.config import Settings, get_settings
 
-
-SERVER = "https://virtserver.swaggerhub.com/josechudev/livy/1.0.0"
+settings = get_settings()
+SERVER = settings.LIVY_SERVER
 
 app = FastAPI()
 
